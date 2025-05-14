@@ -22,3 +22,6 @@ This means both the **publisher** and **subscriber** are connecting to the **sam
 - `5672` is the **default port** used by RabbitMQ for AMQP protocol.
 
 Since both programs use the same URL, they operate on the same message queue system, enabling successful publishing and receiving of events on the `"user_created"` queue.
+
+## Running RabbitMQ as message broker Screenshot : 
+![img.png](img.png)
