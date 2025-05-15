@@ -36,3 +36,14 @@ When I ran the command `cargo run` in the publisher directory, the publisher pro
 Simultaneously, in the subscriber console, I observed the messages being received and printed. This confirmed that the subscriber was successfully listening to the `"user_created"` queue and processing the incoming messages from the publisher.
 
 This demonstrates that the event-driven system is working as expected — the publisher sends messages, and the subscriber consumes them through the shared RabbitMQ broker.
+
+## Monitoring chart based on publisher screenshot :
+![img_2.png](img_2.png)
+
+### Monitoring chart based on publisher
+
+After repeatedly running the publisher, I observed spikes on the message rate chart in the RabbitMQ management dashboard (`localhost:15672`). These spikes represent the bursts of messages being published to the message broker.
+
+Each spike corresponds to a set of `UserCreatedEventMessage` events sent by the publisher. The messages are routed to the `user_created` queue, and the subscriber processes them immediately, which keeps the queue from growing.
+
+This confirms that the publisher is successfully delivering events to RabbitMQ, and the system is behaving in a responsive, event-driven manner as expected.
