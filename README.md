@@ -25,3 +25,14 @@ Since both programs use the same URL, they operate on the same message queue sys
 
 ## Running RabbitMQ as message broker Screenshot : 
 ![img.png](img.png)
+
+## Sending and processing event screenshot :
+![img_1.png](img_1.png)
+
+### What was happening?
+
+When I ran the command `cargo run` in the publisher directory, the publisher program sent 5 events to the RabbitMQ message broker. Each event contained a `UserCreatedEventMessage` with a `user_id` and `user_name`.
+
+Simultaneously, in the subscriber console, I observed the messages being received and printed. This confirmed that the subscriber was successfully listening to the `"user_created"` queue and processing the incoming messages from the publisher.
+
+This demonstrates that the event-driven system is working as expected — the publisher sends messages, and the subscriber consumes them through the shared RabbitMQ broker.
